@@ -3,52 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bite Loyalty - Scansiona per iniziare</title>
+    <title>Bite Loyalty - Accumula Punti</title>
     
-    <!-- Meta tag per App Clip -->
-    <meta name="apple-itunes-app" content="app-clip-bundle-id=com.tuodominio.bite.clip">
+    <!-- Meta tags per App Clip -->
+    <meta name="apple-itunes-app" content="app-clip-bundle-id=investfood.BiteLoyalClub.Clip">
     
-    <!-- Smart App Banner -->
-    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID, app-clip-bundle-id=com.tuodominio.bite.clip">
+    <!-- Meta tags per SEO e condivisione -->
+    <meta name="description" content="Accumula punti e ottieni premi nei tuoi ristoranti preferiti con Bite Loyalty">
+    <meta property="og:title" content="Bite Loyalty - App Clip">
+    <meta property="og:description" content="Scansiona per iniziare ad accumulare punti">
+    <meta property="og:image" content="https://app.biteloyal.club/bite-logo.png">
+    <meta property="og:url" content="https://app.biteloyal.club">
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            text-align: center;
-            padding: 40px 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             min-height: 100vh;
-            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
         }
+        
         .container {
             max-width: 400px;
-            margin: 0 auto;
+            width: 100%;
+            text-align: center;
+            animation: fadeInUp 0.6s ease-out;
         }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         .logo {
-            font-size: 48px;
+            font-size: 64px;
             margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
         }
+        
         .title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
+        
         .subtitle {
-            font-size: 16px;
+            font-size: 18px;
             opacity: 0.9;
             margin-bottom: 40px;
+            line-height: 1.4;
         }
+        
         .app-clip-button {
-            background: white;
+            background: rgba(255,255,255,0.95);
             color: #667eea;
-            padding: 15px 30px;
+            padding: 16px 32px;
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-size: 18px;
-            font-weight: bold;
+            font-weight: 600;
             cursor: pointer;
             margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .app-clip-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+        
+        .app-clip-button:active {
+            transform: translateY(0);
+        }
+        
+        .info-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 24px;
+            margin: 30px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .info-text {
+            font-size: 14px;
+            opacity: 0.8;
+            line-height: 1.5;
+        }
+        
+        .qr-section {
+            margin: 30px 0;
+        }
+        
+        #qrcode {
+            display: inline-block;
+            padding: 15px;
+            background: white;
+            border-radius: 15px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .device-check {
+            font-size: 12px;
+            opacity: 0.7;
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
+        
+        .ios-indicator {
+            display: none;
+            color: #4CAF50;
+            font-weight: 600;
+        }
+        
+        .non-ios-indicator {
+            display: none;
+            color: #FF9800;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 480px) {
+            .title {
+                font-size: 28px;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
+            .container {
+                padding: 0 10px;
+            }
         }
     </style>
 </head>
@@ -56,33 +168,139 @@
     <div class="container">
         <div class="logo">🍽️</div>
         <h1 class="title">Bite Loyalty</h1>
-        <p class="subtitle">Accumula punti e ottieni premi nei tuoi ristoranti preferiti</p>
+        <p class="subtitle">Accumula punti e ottieni premi esclusivi nei tuoi ristoranti preferiti</p>
         
-        <button class="app-clip-button" onclick="openAppClip()">
+        <button class="app-clip-button" onclick="openAppClip()" id="appClipBtn">
+            <span>📱</span>
             Apri App Clip
         </button>
         
-        <p style="font-size: 14px; opacity: 0.8; margin-top: 40px;">
-            Scansiona questo QR code con la fotocamera del tuo iPhone
-        </p>
+        <div class="info-card">
+            <p class="info-text">
+                <strong>Come funziona:</strong><br>
+                1. Scansiona il QR code con la fotocamera<br>
+                2. Tocca la notifica App Clip<br>
+                3. Inizia subito ad accumulare punti!
+            </p>
+        </div>
+        
+        <div class="qr-section">
+            <p style="font-size: 16px; margin-bottom: 15px; font-weight: 600;">
+                📷 Scansiona con la fotocamera iOS
+            </p>
+            <div id="qrcode"></div>
+        </div>
+        
+        <div class="device-check">
+            <div id="iosDevice" class="ios-indicator">
+                ✅ Dispositivo iOS rilevato - App Clip disponibile
+            </div>
+            <div id="nonIosDevice" class="non-ios-indicator">
+                ⚠️ App Clip disponibile solo su iPhone/iPad con iOS 14+
+            </div>
+            <div style="margin-top: 10px; font-size: 11px;">
+                URL: app.biteloyal.club
+            </div>
+        </div>
     </div>
 
+    <!-- QR Code Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    
     <script>
+        // Funzione per aprire App Clip
         function openAppClip() {
-            // Prova ad aprire l'App Clip
-            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-                // Sostituisci con il tuo bundle ID
-                window.location.href = "https://appclip.apple.com/id?p=com.tuodominio.bite.clip";
+            console.log('Tentativo di apertura App Clip...');
+            
+            if (isIOSDevice()) {
+                // Prova diversi metodi per aprire l'App Clip
+                
+                // Metodo 1: URL scheme App Clip
+                const appClipURL = `https://appclip.apple.com/id?p=investfood.BiteLoyalClub.Clip`;
+                console.log('Aprendo App Clip con URL:', appClipURL);
+                window.location.href = appClipURL;
+                
+                // Metodo 2: Fallback dopo 2 secondi se non si apre
+                setTimeout(() => {
+                    // Prova con universal link
+                    window.location.href = 'https://app.biteloyal.club';
+                }, 2000);
+                
             } else {
-                alert("App Clip disponibile solo su iOS 14+");
+                alert('App Clip disponibile solo su dispositivi iOS 14 o superiori.\n\nScarica l\'app completa dall\'App Store!');
             }
         }
-
-        // Auto-redirect su dispositivi iOS
-        if (/iPhone|iPad|iPod/.test(navigator.userAgent) && window.navigator.standalone !== true) {
-            // Mostra il banner automaticamente
-            console.log("Dispositivo iOS rilevato");
+        
+        // Controlla se è un dispositivo iOS
+        function isIOSDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return /iphone|ipad|ipod/.test(userAgent);
         }
+        
+        // Controlla versione iOS (opzionale)
+        function getIOSVersion() {
+            const userAgent = navigator.userAgent;
+            const match = userAgent.match(/OS (\d+)_(\d+)_?(\d+)?/);
+            if (match) {
+                return parseInt(match[1], 10);
+            }
+            return null;
+        }
+        
+        // Inizializzazione
+        document.addEventListener('DOMContentLoaded', function() {
+            // Genera QR Code
+            const qrContainer = document.getElementById('qrcode');
+            if (typeof QRCode !== 'undefined') {
+                QRCode.toCanvas(qrContainer, 'https://app.biteloyal.club', {
+                    width: 180,
+                    height: 180,
+                    margin: 2,
+                    color: {
+                        dark: '#333333',
+                        light: '#FFFFFF'
+                    }
+                }, function (error) {
+                    if (error) {
+                        console.error('Errore generazione QR:', error);
+                        qrContainer.innerHTML = '<p style="color: #333; padding: 20px;">QR Code non disponibile</p>';
+                    } else {
+                        console.log('QR Code generato con successo!');
+                    }
+                });
+            }
+            
+            // Mostra indicatore dispositivo
+            const iosIndicator = document.getElementById('iosDevice');
+            const nonIosIndicator = document.getElementById('nonIosDevice');
+            const appClipBtn = document.getElementById('appClipBtn');
+            
+            if (isIOSDevice()) {
+                iosIndicator.style.display = 'block';
+                
+                const iosVersion = getIOSVersion();
+                if (iosVersion && iosVersion >= 14) {
+                    console.log(`iOS ${iosVersion} rilevato - App Clip supportato`);
+                } else if (iosVersion && iosVersion < 14) {
+                    nonIosIndicator.style.display = 'block';
+                    nonIosIndicator.innerHTML = '⚠️ iOS 14+ richiesto per App Clip';
+                    appClipBtn.innerHTML = '<span>📱</span> Aggiorna iOS per App Clip';
+                }
+            } else {
+                nonIosIndicator.style.display = 'block';
+            }
+            
+            console.log('Bite Loyalty App Clip Demo caricato');
+            console.log('Bundle ID: investfood.BiteLoyalClub.Clip');
+            console.log('URL: https://app.biteloyal.club');
+        });
+        
+        // Auto-trigger per test (commentato per produzione)
+        // setTimeout(() => {
+        //     if (isIOSDevice() && window.location.search.includes('autoopen')) {
+        //         openAppClip();
+        //     }
+        // }, 1000);
     </script>
 </body>
 </html>
