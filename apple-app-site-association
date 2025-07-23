@@ -1,1 +1,14 @@
-
+{
+    "appclips": {
+        "apps": ["44Q9C43M4W.investfood.BiteLoyalClub.Clip"]
+    },
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "44Q9C43M4W.investfood.BiteLoyalClub.Clip",
+                "paths": ["*"]
+            }
+        ]
+    }
+}
