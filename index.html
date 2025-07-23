@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bite Loyalty - Scansiona per iniziare</title>
+    
+    <!-- Meta tag per App Clip -->
+    <meta name="apple-itunes-app" content="app-clip-bundle-id=com.tuodominio.bite.clip">
+    
+    <!-- Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=YOUR_APP_ID, app-clip-bundle-id=com.tuodominio.bite.clip">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        .app-clip-button {
+            background: white;
+            color: #667eea;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🍽️</div>
+        <h1 class="title">Bite Loyalty</h1>
+        <p class="subtitle">Accumula punti e ottieni premi nei tuoi ristoranti preferiti</p>
+        
+        <button class="app-clip-button" onclick="openAppClip()">
+            Apri App Clip
+        </button>
+        
+        <p style="font-size: 14px; opacity: 0.8; margin-top: 40px;">
+            Scansiona questo QR code con la fotocamera del tuo iPhone
+        </p>
+    </div>
+
+    <script>
+        function openAppClip() {
+            // Prova ad aprire l'App Clip
+            if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                // Sostituisci con il tuo bundle ID
+                window.location.href = "https://appclip.apple.com/id?p=com.tuodominio.bite.clip";
+            } else {
+                alert("App Clip disponibile solo su iOS 14+");
+            }
+        }
+
+        // Auto-redirect su dispositivi iOS
+        if (/iPhone|iPad|iPod/.test(navigator.userAgent) && window.navigator.standalone !== true) {
+            // Mostra il banner automaticamente
+            console.log("Dispositivo iOS rilevato");
+        }
+    </script>
+</body>
+</html>
